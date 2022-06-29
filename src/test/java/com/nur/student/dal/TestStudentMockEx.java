@@ -11,7 +11,6 @@ import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.nur.student.dal.entities.Student;
@@ -61,7 +60,7 @@ public class TestStudentMockEx {
 		s1.setCourse("Media");
 		s1.setFee(7000d);
 			
-		Mockito.when(studentRepository.findById(s1.getId())).thenReturn(Optional.of(s1));
+		when(studentRepository.findById(s1.getId())).thenReturn(Optional.of(s1));
 		
 		Student actualStudent = studentService.getStudentById(1l);
 		
